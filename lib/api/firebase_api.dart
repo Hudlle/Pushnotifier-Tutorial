@@ -18,6 +18,10 @@ class FirebaseApi {
   }
 
   // Function to handle received messages
+  void handleMessage(RemoteMessage? message) {
+    // check if null; if so, do nothing
+    if (message == null) return;
+  }
 
   // Function to initialize foreground and background settings
 }
