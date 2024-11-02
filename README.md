@@ -1,16 +1,12 @@
 # pushnotifier_tutorial
 
-A new Flutter project.
+Followd this tutorial:
+https://www.youtube.com/watch?v=A3M0N_B-CR0
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+That's the code.
+Good introduction to notifications basics.
+Some questions sill remain.
+Most important: 
+How do I create and send custom notifications from flutter code?
+Do users need to create an account for notifications to work?
+How do I send notifications securely without the risk of being hacked?
