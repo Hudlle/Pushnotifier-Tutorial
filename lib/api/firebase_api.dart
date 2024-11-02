@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:pushnotifier_tutorial/main.dart';
 
 class FirebaseApi {
   // Create instance of Firebase Messaging
@@ -15,13 +16,29 @@ class FirebaseApi {
 
     // print the token (normally you would send this to your server)
     log("Token $fcmToken");
+
+    // initialize further settings for push noti
+    initPushNotification();
   }
 
   // Function to handle received messages
   void handleMessage(RemoteMessage? message) {
     // check if null; if so, do nothing
     if (message == null) return;
+
+    // navigate to new screen when message is received and user taps notification
+    navigatorKey.currentState?.pushNamed(
+      "/notification_screen",
+      arguments: message
+    );
   }
 
-  // Function to initialize foreground and background settings
+  // Function to initialize background settings
+  Future initPushNotification() async {
+    // handle notification if the app was terminated and now opened
+    FirebaseMessaging.instance.getInitialMessage().then(handleMessage);
+
+    // attach event listeners for when a notification opens the app
+    FirebaseMessaging.onMessageOpenedApp.listen(handleMessage);
+  }
 }
